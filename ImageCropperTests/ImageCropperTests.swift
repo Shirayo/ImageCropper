@@ -2,7 +2,7 @@
 //  ImageCropperTests.swift
 //  ImageCropperTests
 //
-//  Created by Apple on 11/09/2024.
+//  Created by Shirayo on 11/09/2024.
 //
 
 import XCTest

@@ -2,7 +2,7 @@
 //  ImageCropperApp.swift
 //  ImageCropper
 //
-//  Created by Apple on 11/09/2024.
+//  Created by Shirayo on 11/09/2024.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct ImageCropperApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		18A0C9A42C9179DA00D33413 /* ImageCropperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */; };
-		18A0C9A62C9179DA00D33413 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A52C9179DA00D33413 /* ContentView.swift */; };
+		18A0C9A62C9179DA00D33413 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A52C9179DA00D33413 /* MainView.swift */; };
 		18A0C9A82C9179DB00D33413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A0C9A72C9179DB00D33413 /* Assets.xcassets */; };
 		18A0C9AB2C9179DB00D33413 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A0C9AA2C9179DB00D33413 /* Preview Assets.xcassets */; };
 		18A0C9B52C9179DC00D33413 /* ImageCropperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9B42C9179DC00D33413 /* ImageCropperTests.swift */; };
 		18A0C9BF2C9179DC00D33413 /* ImageCropperUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9BE2C9179DC00D33413 /* ImageCropperUITests.swift */; };
 		18A0C9C12C9179DC00D33413 /* ImageCropperUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9C02C9179DC00D33413 /* ImageCropperUITestsLaunchTests.swift */; };
+		18A0C9CF2C91805400D33413 /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9CE2C91805400D33413 /* CropView.swift */; };
+		18A0C9D12C91806200D33413 /* CropViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9D02C91806200D33413 /* CropViewModel.swift */; };
+		18A0C9D42C9180A500D33413 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9D32C9180A500D33413 /* SettingsView.swift */; };
+		18A0C9D72C91815E00D33413 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9D62C91815E00D33413 /* TabItem.swift */; };
+		18A0C9DC2C9181DD00D33413 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9DB2C9181DD00D33413 /* Tab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,7 @@
 /* Begin PBXFileReference section */
 		18A0C9A02C9179DA00D33413 /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperApp.swift; sourceTree = "<group>"; };
-		18A0C9A52C9179DA00D33413 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		18A0C9A52C9179DA00D33413 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		18A0C9A72C9179DB00D33413 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18A0C9AA2C9179DB00D33413 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		18A0C9B02C9179DC00D33413 /* ImageCropperTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCropperTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +49,11 @@
 		18A0C9BA2C9179DC00D33413 /* ImageCropperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageCropperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A0C9BE2C9179DC00D33413 /* ImageCropperUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperUITests.swift; sourceTree = "<group>"; };
 		18A0C9C02C9179DC00D33413 /* ImageCropperUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		18A0C9CE2C91805400D33413 /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
+		18A0C9D02C91806200D33413 /* CropViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewModel.swift; sourceTree = "<group>"; };
+		18A0C9D32C9180A500D33413 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		18A0C9D62C91815E00D33413 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		18A0C9DB2C9181DD00D33413 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,8 +104,12 @@
 		18A0C9A22C9179DA00D33413 /* ImageCropper */ = {
 			isa = PBXGroup;
 			children = (
+				18A0C9D92C9181CB00D33413 /* Utils */,
+				18A0C9D52C91814400D33413 /* CustomComponents */,
+				18A0C9D22C91809500D33413 /* SettingsView */,
+				18A0C9CD2C91804200D33413 /* CropView */,
+				18A0C9A52C9179DA00D33413 /* MainView.swift */,
 				18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */,
-				18A0C9A52C9179DA00D33413 /* ContentView.swift */,
 				18A0C9A72C9179DB00D33413 /* Assets.xcassets */,
 				18A0C9A92C9179DB00D33413 /* Preview Content */,
 			);
@@ -125,6 +139,47 @@
 				18A0C9C02C9179DC00D33413 /* ImageCropperUITestsLaunchTests.swift */,
 			);
 			path = ImageCropperUITests;
+			sourceTree = "<group>";
+		};
+		18A0C9CD2C91804200D33413 /* CropView */ = {
+			isa = PBXGroup;
+			children = (
+				18A0C9CE2C91805400D33413 /* CropView.swift */,
+				18A0C9D02C91806200D33413 /* CropViewModel.swift */,
+			);
+			path = CropView;
+			sourceTree = "<group>";
+		};
+		18A0C9D22C91809500D33413 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				18A0C9D32C9180A500D33413 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
+		18A0C9D52C91814400D33413 /* CustomComponents */ = {
+			isa = PBXGroup;
+			children = (
+				18A0C9D62C91815E00D33413 /* TabItem.swift */,
+			);
+			path = CustomComponents;
+			sourceTree = "<group>";
+		};
+		18A0C9D92C9181CB00D33413 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				18A0C9DA2C9181D100D33413 /* Enums */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		18A0C9DA2C9181D100D33413 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				18A0C9DB2C9181DD00D33413 /* Tab.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +312,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18A0C9A62C9179DA00D33413 /* ContentView.swift in Sources */,
+				18A0C9D42C9180A500D33413 /* SettingsView.swift in Sources */,
+				18A0C9A62C9179DA00D33413 /* MainView.swift in Sources */,
+				18A0C9D72C91815E00D33413 /* TabItem.swift in Sources */,
 				18A0C9A42C9179DA00D33413 /* ImageCropperApp.swift in Sources */,
+				18A0C9D12C91806200D33413 /* CropViewModel.swift in Sources */,
+				18A0C9CF2C91805400D33413 /* CropView.swift in Sources */,
+				18A0C9DC2C9181DD00D33413 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
