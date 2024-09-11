@@ -17,7 +17,7 @@ struct MainView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             TabView(selection: $selectedTab) {
                 CropView()
                     .tag(Tab.crop)
