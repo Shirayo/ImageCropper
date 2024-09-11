@@ -27,8 +27,7 @@ struct MainView: View {
             }
             
             CustomTabBar(
-                tint: Color("MainTextColor"),
-                unactiveTint: Color("MainTextColor")
+                tint: Color("MainTextColor")
             )
             
         }
@@ -36,12 +35,11 @@ struct MainView: View {
     }
     
     @ViewBuilder
-    func CustomTabBar(tint: Color, unactiveTint: Color) -> some View {
+    private func CustomTabBar(tint: Color) -> some View {
         HStack(alignment: .bottom) {
             ForEach(Tab.allCases, id: \.self) { tab in
                 TabItem(
                     tint: tint,
-                    unactiveTint: unactiveTint,
                     tab: tab,
                     animation: animation,
                     selectedTab: $selectedTab
