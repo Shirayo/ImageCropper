@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188255F92C91F4FF009B0E67 /* Color+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188255F82C91F4FF009B0E67 /* Color+Extentions.swift */; };
 		18A0C9A42C9179DA00D33413 /* ImageCropperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */; };
 		18A0C9A62C9179DA00D33413 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A52C9179DA00D33413 /* MainView.swift */; };
 		18A0C9A82C9179DB00D33413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A0C9A72C9179DB00D33413 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		188255F82C91F4FF009B0E67 /* Color+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extentions.swift"; sourceTree = "<group>"; };
 		18A0C9A02C9179DA00D33413 /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperApp.swift; sourceTree = "<group>"; };
 		18A0C9A52C9179DA00D33413 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		188255F72C91F4EE009B0E67 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				188255F82C91F4FF009B0E67 /* Color+Extentions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		18A0C9972C9179DA00D33413 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +179,7 @@
 		18A0C9D92C9181CB00D33413 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				188255F72C91F4EE009B0E67 /* Extensions */,
 				18A0C9DA2C9181D100D33413 /* Enums */,
 			);
 			path = Utils;
@@ -316,6 +327,7 @@
 				18A0C9A62C9179DA00D33413 /* MainView.swift in Sources */,
 				18A0C9D72C91815E00D33413 /* TabItem.swift in Sources */,
 				18A0C9A42C9179DA00D33413 /* ImageCropperApp.swift in Sources */,
+				188255F92C91F4FF009B0E67 /* Color+Extentions.swift in Sources */,
 				18A0C9D12C91806200D33413 /* CropViewModel.swift in Sources */,
 				18A0C9CF2C91805400D33413 /* CropView.swift in Sources */,
 				18A0C9DC2C9181DD00D33413 /* Tab.swift in Sources */,

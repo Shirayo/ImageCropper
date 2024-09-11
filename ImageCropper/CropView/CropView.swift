@@ -2,7 +2,7 @@
 //  CropView.swift
 //  ImageCropper
 //
-//  Created by Apple on 11/09/2024.
+//  Created by Shirayo on 11/09/2024.
 //
 
 import SwiftUI
@@ -35,19 +35,23 @@ struct CropView: View {
                                 isOn: $isFilterOn
                             )
                             .font(.title2)
+                            .foregroundStyle(Color("MainTextColor"))
+                            .tint(Color("MainTextColor"))
                             .toggleStyle(.button)
                             .contentTransition(.symbolEffect)
                         }
                         
-                        if let selectedImage = selectedImage {
-                            CropImageView(
-                                image: Image(uiImage: selectedImage),
-                                totalOffset: $totalOffset,
-                                currentOffset: $currentOffset,
-                                currentZoom: $currentZoom,
-                                totalZoom: $totalZoom
-                            )
-                        }
+                        Spacer()
+                        
+                        CropImageView(
+                            image: $selectedImage,
+                            totalOffset: $totalOffset,
+                            currentOffset: $currentOffset,
+                            currentZoom: $currentZoom,
+                            totalZoom: $totalZoom
+                        )
+                        
+                        Spacer()
                     } else {
                         Spacer()
                         
@@ -90,7 +94,7 @@ struct CropView: View {
                                 Image(uiImage: selectedImage)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: 135, height: 240)
+                                    .frame(width: 150, height: 300)
                                     .scaleEffect(currentZoom + totalZoom)
                                     .offset(x: -currentOffset.width - totalOffset.width)
                                     .offset(y: -currentOffset.height - totalOffset.height)
@@ -108,13 +112,31 @@ struct CropView: View {
                             }
                         }, label: {
                             Text("Save")
+                                .foregroundStyle(Color("MainTextColor"))
                         })
                     } else {
                         Spacer()
                     }
                     
                 })
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        if isImageChosen {
+                            PhotosPicker(
+                                selection: $photoSelection,
+                                matching: .images,
+                                photoLibrary: .shared()
+                            ) {
+                                Text("new")
+                                    .foregroundStyle(Color("MainTextColor"))
+                            }
+                        } else {
+                            Spacer()
+                        }
+                    }
+                }
             }
+            
             .onChange(of: photoSelection) { oldValue, newValue in
                 Task {
                     if let photoSelection = newValue,
@@ -134,7 +156,7 @@ struct CropView: View {
 }
 
 struct CropImageView: View {
-    @State var image: Image
+    @Binding var image: UIImage?
     @Binding var totalOffset: CGSize
     @Binding var currentOffset: CGSize
     @State private var size = CGSize.zero
@@ -146,72 +168,74 @@ struct CropImageView: View {
     @State private var isGestureActive = false
     var body: some View {
         ZStack {
-            image
-                .resizable()
-                .scaledToFill()
-                .scaleEffect(currentZoom + totalZoom)
-                .opacity(wholeImageOpacity)
-                .frame(width: 135, height: 240)
-            image
-                .resizable()
-                .scaledToFill()
-                .scaleEffect(currentZoom + totalZoom)
-                .frame(width: 135, height: 240)
-                .mask({
-                    Rectangle()
-                        .frame(width: 135, height: 240)
+            if let image = image {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .scaleEffect(currentZoom + totalZoom)
+                    .opacity(wholeImageOpacity)
+                    .frame(width: 150, height: 300)
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .scaleEffect(currentZoom + totalZoom)
+                    .frame(width: 150, height: 300)
+                    .mask({
+                        Rectangle()
+                            .frame(width: 150, height: 300)
+
+                            .rotationEffect(frameRotation)
+                            .offset(x: currentOffset.width + totalOffset.width)
+                            .offset(y: currentOffset.height + totalOffset.height)
+                    })
+                    .background {
+                        Rectangle()
+                            .stroke(lineWidth: 2)
+                            .frame(width: 150, height: 300)
+                            .rotationEffect(frameRotation)
+                            .offset(x: currentOffset.width + totalOffset.width)
+                            .offset(y: currentOffset.height + totalOffset.height)
                         
-                        .rotationEffect(frameRotation)
-                        .offset(x: currentOffset.width + totalOffset.width)
-                        .offset(y: currentOffset.height + totalOffset.height)
-                })
-                .background {
-                    Rectangle()
-                        .stroke(lineWidth: 2)
-                        .frame(width: 135, height: 240)
-                        .rotationEffect(frameRotation)
-                        .offset(x: currentOffset.width + totalOffset.width)
-                        .offset(y: currentOffset.height + totalOffset.height)
-                    
-                }
-                .gesture(
-                    DragGesture()
-                        .onChanged { gesture in
-                            if !isGestureActive {
+                    }
+                    .gesture(
+                        DragGesture()
+                            .onChanged { gesture in
+                                if !isGestureActive {
+                                    withAnimation {
+                                        wholeImageOpacity = 0.5
+                                    }
+                                    isGestureActive = true
+                                }
+                                
+                                currentOffset = gesture.translation
+                            }
+                            .onEnded { _ in
+                                withAnimation {
+                                    wholeImageOpacity = 0
+                                }
+                                isGestureActive = false
+                                totalOffset.width += currentOffset.width
+                                totalOffset.height += currentOffset.height
+                                currentOffset = .zero
+                            }
+                    )
+                    .gesture(
+                        MagnifyGesture()
+                            .onChanged { value in
                                 withAnimation {
                                     wholeImageOpacity = 0.5
                                 }
-                                isGestureActive = true
+                                currentZoom = value.magnification - 1
                             }
-                            
-                            currentOffset = gesture.translation
-                        }
-                        .onEnded { _ in
-                            withAnimation {
-                                wholeImageOpacity = 0
+                            .onEnded { value in
+                                withAnimation {
+                                    wholeImageOpacity = 0
+                                }
+                                totalZoom += currentZoom
+                                currentZoom = 0
                             }
-                            isGestureActive = false
-                            totalOffset.width += currentOffset.width
-                            totalOffset.height += currentOffset.height
-                            currentOffset = .zero
-                        }
-                )
-                .gesture(
-                    MagnifyGesture()
-                        .onChanged { value in
-                            withAnimation {
-                                wholeImageOpacity = 0.5
-                            }
-                            currentZoom = value.magnification - 1
-                        }
-                        .onEnded { value in
-                            withAnimation {
-                                wholeImageOpacity = 0
-                            }
-                            totalZoom += currentZoom
-                            currentZoom = 0
-                        }
-                )
+                    )
+            }
         }
     }
 }
