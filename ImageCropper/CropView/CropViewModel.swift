@@ -13,6 +13,7 @@ class CropViewModel: ObservableObject {
     
     @Published var isFilterOn: Bool = false
     @Published var isImageChosen: Bool = false
+    @Published var isPermissionDenied: Bool = false
     @Published var selectedImage: UIImage?
     @Published var photoSelection: PhotosPickerItem? = nil
     @Published var currentOffset: CGSize = .zero
@@ -48,7 +49,6 @@ class CropViewModel: ObservableObject {
                 .frame(width: 150, height: 300)
                 .rotationEffect(frameRotation)
                 .scaleEffect(currentZoom + totalZoom)
-            
                 .grayscale(isFilterOn ? 1 : 0)
                 .offset(x: -currentOffset.width - totalOffset.width)
                 .offset(y: -currentOffset.height - totalOffset.height)
@@ -61,11 +61,11 @@ class CropViewModel: ObservableObject {
         ren.scale = UIScreen.main.scale
         if let image = ren.uiImage{
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            isPermissionDenied = PHPhotoLibrary.authorizationStatus(for: .addOnly).rawValue == 2 ? true : false
         } else {
             print("ERROR SAVING PHOTO")
         }
     }
-    
     private func setDefaultSettings() {
         isImageChosen = true
         currentZoom = 0

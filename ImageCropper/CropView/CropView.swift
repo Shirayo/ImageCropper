@@ -124,7 +124,9 @@ struct CropView: View {
             
         }
         .edgesIgnoringSafeArea(.top)
-
+        .alert("Please enable permission to save photos in your app settings", isPresented: $viewModel.isPermissionDenied) {
+            Button("OK", role: .cancel) { }
+        }
     }
 }
 

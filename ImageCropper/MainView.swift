@@ -26,7 +26,7 @@ struct MainView: View {
                     CropView(viewModel: CropViewModel())
                         .tag(Tab.crop)
                     
-                    SettingsView()
+                    SettingsView(viewModel: SettingsViewModel())
                         .tag(Tab.settings)
                 }
                 
