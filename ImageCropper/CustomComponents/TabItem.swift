@@ -27,7 +27,7 @@ struct TabItem: View {
                             .fill(Color("MainColor"))
                             .offset(x: 2, y: 2)
                             .brightness(0.1)
-                            .blur(radius: 3.0)
+                            .blur(radius: 5.0)
                             .overlay {
                                 Circle()
                                     .fill(Color("MainColor"))
@@ -36,7 +36,7 @@ struct TabItem: View {
                                 Circle()
                                     .fill(Color("MainColor"))
                                     .offset(x: -2, y: -2)
-                                    .blur(radius: 3.0)
+                                    .blur(radius: 5.0)
                                     .brightness(-0.1)
                             }
                     }

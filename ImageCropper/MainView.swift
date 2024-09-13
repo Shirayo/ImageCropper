@@ -11,27 +11,31 @@ struct MainView: View {
     
     @State private var selectedTab: Tab = .crop
     @Namespace private var animation
-    
+
     init() {
         UITabBar.appearance().isHidden = true
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            TabView(selection: $selectedTab) {
-                CropView()
-                    .tag(Tab.crop)
+        ZStack {
+            Color.main
+                .ignoresSafeArea(edges: .bottom)
+
+            VStack(spacing: 0) {
+                TabView(selection: $selectedTab) {
+                    CropView(viewModel: CropViewModel())
+                        .tag(Tab.crop)
+                    
+                    SettingsView()
+                        .tag(Tab.settings)
+                }
                 
-                SettingsView()
-                    .tag(Tab.settings)
+                CustomTabBar(
+                    tint: Color("MainTextColor")
+                )
+                
             }
-            
-            CustomTabBar(
-                tint: Color("MainTextColor")
-            )
-            
         }
-        .ignoresSafeArea()
     }
     
     @ViewBuilder
@@ -46,8 +50,8 @@ struct MainView: View {
                 )
             }
         }
-        .padding(.bottom, 24)
         .padding(.top, 8)
+        .padding(.bottom, 8)
         .padding(.horizontal)
         .background {
             Rectangle()
@@ -61,9 +65,9 @@ struct MainView: View {
                 }
         }
         .animation(.interactiveSpring(response: 0.3, dampingFraction: 0.8, blendDuration: 0.5), value: selectedTab)
-        
     }
 }
+//        .padding(.bottom, bottomPadding == 0 ? 8 : bottomPadding)
 
 
 #Preview {

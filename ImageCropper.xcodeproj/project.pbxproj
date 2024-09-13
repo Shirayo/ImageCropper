@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		188255F92C91F4FF009B0E67 /* Color+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188255F82C91F4FF009B0E67 /* Color+Extentions.swift */; };
+		188255F92C91F4FF009B0E67 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188255F82C91F4FF009B0E67 /* Color+Extensions.swift */; };
+		188255FD2C9448FE009B0E67 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188255FC2C9448FE009B0E67 /* View+Extensions.swift */; };
 		18A0C9A42C9179DA00D33413 /* ImageCropperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */; };
 		18A0C9A62C9179DA00D33413 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A0C9A52C9179DA00D33413 /* MainView.swift */; };
 		18A0C9A82C9179DB00D33413 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A0C9A72C9179DB00D33413 /* Assets.xcassets */; };
@@ -40,7 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		188255F82C91F4FF009B0E67 /* Color+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extentions.swift"; sourceTree = "<group>"; };
+		188255F82C91F4FF009B0E67 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		188255FC2C9448FE009B0E67 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		18A0C9A02C9179DA00D33413 /* ImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18A0C9A32C9179DA00D33413 /* ImageCropperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCropperApp.swift; sourceTree = "<group>"; };
 		18A0C9A52C9179DA00D33413 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -86,7 +88,8 @@
 		188255F72C91F4EE009B0E67 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				188255F82C91F4FF009B0E67 /* Color+Extentions.swift */,
+				188255F82C91F4FF009B0E67 /* Color+Extensions.swift */,
+				188255FC2C9448FE009B0E67 /* View+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -324,10 +327,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				18A0C9D42C9180A500D33413 /* SettingsView.swift in Sources */,
+				188255FD2C9448FE009B0E67 /* View+Extensions.swift in Sources */,
 				18A0C9A62C9179DA00D33413 /* MainView.swift in Sources */,
 				18A0C9D72C91815E00D33413 /* TabItem.swift in Sources */,
 				18A0C9A42C9179DA00D33413 /* ImageCropperApp.swift in Sources */,
-				188255F92C91F4FF009B0E67 /* Color+Extentions.swift in Sources */,
+				188255F92C91F4FF009B0E67 /* Color+Extensions.swift in Sources */,
 				18A0C9D12C91806200D33413 /* CropViewModel.swift in Sources */,
 				18A0C9CF2C91805400D33413 /* CropView.swift in Sources */,
 				18A0C9DC2C9181DD00D33413 /* Tab.swift in Sources */,
